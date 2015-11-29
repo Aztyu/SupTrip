@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.suptrip.website.dao.CampusDAO;
 import com.suptrip.website.dao.UserDAO;
 import com.suptrip.website.entity.Campus;
 
@@ -39,52 +40,29 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/campus", method = RequestMethod.GET)
-	public String campusGet(HttpServletRequest req) {
-		try{
-			String name;
-			if((name = (String) req.getAttribute("name")) != null){
-				String address = (String) req.getAttribute("address");
-				String city = (String) req.getAttribute("city");
-				String postal_code = (String) req.getAttribute("postal_code");
-				Campus campus = new Campus();
-				campus.setAddress(address);
-				campus.setCity(city);
-				campus.setPostal_code(Integer.parseInt(postal_code));
-				UserDAO.addCampus(campus);
-				req.setAttribute("message", "Campus was created");
-				return "campus";
-			}else{
-				return "campus";
-			}
-		}catch(Exception ex){
-			req.setAttribute("message", ex.getMessage());
-			return "campus";
-		}
+	public String campusGet(HttpServletRequest req) {		//Show the form
+		return "campus";
 	}
 	
 	@RequestMapping(value = "/campus", method = RequestMethod.POST)
 	public String campusPost(HttpServletRequest req) {
 		try{
-			String name;
-			if((name = (String) req.getParameter("name")) != null){
-				String address = (String) req.getParameter("address");
-				String city = (String) req.getParameter("city");
-				String postal_code = (String) req.getParameter("postal_code");
-				Campus campus = new Campus();
-				campus.setName(name);
-				campus.setAddress(address);
-				campus.setCity(city);
-				campus.setPostal_code(Integer.parseInt(postal_code));
-				UserDAO.addCampus(campus);
-				req.setAttribute("message", "Campus was created");
-				return "campus";
-			}else{
-				return "campus";
-			}
+			String name = (String) req.getParameter("name");
+			String address = (String) req.getParameter("address");
+			String city = (String) req.getParameter("city");
+			String postal_code = (String) req.getParameter("postal_code");
+			Campus campus = new Campus();
+			campus.setName(name);
+			campus.setAddress(address);
+			campus.setCity(city);
+			campus.setPostal_code(Integer.parseInt(postal_code));
+			CampusDAO.addCampus(campus);
+			req.setAttribute("message", "Campus was created");
+			return "campus";
 		}catch(Exception ex){
 			req.setAttribute("message", ex.getMessage());
 			return "campus";

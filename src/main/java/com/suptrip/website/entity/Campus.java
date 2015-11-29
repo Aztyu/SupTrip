@@ -23,12 +23,22 @@ public class Campus {
 	
 	private int postal_code;
 	
-	@OneToMany(mappedBy="campus")
-	private Collection<User> users;
+	//@OneToMany(mappedBy="campus")
+	//private Collection<User> users;
 	
 	public Campus() {
 		super();
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getName() {
 		return name;

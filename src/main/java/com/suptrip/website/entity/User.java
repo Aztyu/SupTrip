@@ -15,16 +15,26 @@ public class User {
 	
 	private String lastname;
 	
+	private String password;
+	
 	private String email;
 	
 	@ManyToOne
-	@JoinColumn(name="campus_fk")
+	//@JoinColumn(name="campus_fk")
 	private Campus campus;
 	
 	public User() {
 		super();
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public int getBooster_id() {
 		return booster_id;
 	}

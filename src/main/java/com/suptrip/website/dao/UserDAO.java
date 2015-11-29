@@ -11,21 +11,28 @@ import com.suptrip.website.entity.User;
 public class UserDAO {
 	public static User getUser(int booster_id, String password){
         EntityManager em = PersistanceManager.getEntityManager();
-        Query query = em.createQuery("SELECT user FROM User as user WHERE user.id_booster = :id AND user.password = :password");
+        Query query = em.createQuery("SELECT user FROM User as user WHERE user.booster_id = :id AND user.password = :password");
         query.setParameter("id", booster_id);
         query.setParameter("password", password);
-
-        User user = (User) query.getSingleResult();
-        
-        em.close();
-        return user;
+        if(query.getResultList().isEmpty()){
+            return null;
+        }else{
+            return (User)query.getSingleResult();
+        }
     }
 	
-	public static void addCampus(Campus campus){
+	public static boolean userExists(int booster_id){
+        EntityManager em = PersistanceManager.getEntityManager();
+        Query query = em.createQuery("SELECT user FROM User as user WHERE user.booster_id = :id");
+        query.setParameter("id", booster_id);
+        return !query.getResultList().isEmpty();
+    }
+	
+	public static void addUser(User user){
 		EntityManager em = PersistanceManager.getEntityManager();
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		em.persist(campus);
+		em.persist(user);
 		et.commit();
 		em.close();
 	}
