@@ -1,12 +1,9 @@
 package com.suptrip.website.entity;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Campus {
@@ -22,9 +19,6 @@ public class Campus {
 	private String city;
 	
 	private int postal_code;
-	
-	//@OneToMany(mappedBy="campus")
-	//private Collection<User> users;
 	
 	public Campus() {
 		super();

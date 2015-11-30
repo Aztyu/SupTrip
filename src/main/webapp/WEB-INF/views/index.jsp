@@ -8,11 +8,13 @@
 		<h1>
 			Hello world!  
 		</h1>
-		
-		<a href="${pageContext.request.contextPath}/login">Login</a>
 		<a href="${pageContext.request.contextPath}/register">Register</a>
+		
+		<h2>  This is the home of SUPINFO own trip website ! </h2>
+		
+		<p>There are currently ${ users } users and ${ trips } trips organized. Welcome aboard !!</p>
 	
-		<p>  This is the home of SUPINFO own trip website ! </p>
+		
 	
 		<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
 	        <p>ID Booster :</p>

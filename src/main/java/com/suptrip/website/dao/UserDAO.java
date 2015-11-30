@@ -36,4 +36,10 @@ public class UserDAO {
 		et.commit();
 		em.close();
 	}
+	
+	public static long userNumber(){
+		EntityManager em = PersistanceManager.getEntityManager();
+        Query query = em.createQuery("SELECT COUNT(u.booster_id) FROM User u");
+        return (Long)query.getSingleResult();
+	}
 }

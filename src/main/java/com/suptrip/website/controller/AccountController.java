@@ -21,7 +21,7 @@ import com.suptrip.website.entity.User;
 public class AccountController {
 private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	@RequestMapping(value = "/loginRequest", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginRequest", method = {RequestMethod.POST})
 	public String loginRequest(HttpServletRequest req) {
 		try{
 			if(req.getParameter("id") != null && req.getParameter("password") != null){	//Login password and username were sent
@@ -79,6 +79,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 				String password = (String) req.getParameter("password");
 				String password_verif = (String) req.getParameter("password_v");
 				if(password.equals(password_verif)){
+					req.setAttribute("password", password);
 					int campus_id = Integer.parseInt(req.getParameter("campus")); 
 					
 					User user = new User();
@@ -92,8 +93,8 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 					user.setCampus(campus);
 					
 					UserDAO.addUser(user);
-					req.setAttribute("message", "User was created");
-					return "index";
+					req.getSession().setAttribute("user", user);
+					return "redirect:home";
 				}else{
 					req.setAttribute("message", "Passwords do not match");
 					return "register";

@@ -11,6 +11,7 @@
 		<a href="${pageContext.request.contextPath}/create/trip">Create a new trip</a>
 		<a href="${pageContext.request.contextPath}/logout">Logout</a>
 		
+		<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>
 		<p></p>
 	</body>
 </html>

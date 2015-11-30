@@ -2,7 +2,6 @@ package com.suptrip.website.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -20,7 +19,6 @@ public class User {
 	private String email;
 	
 	@ManyToOne
-	//@JoinColumn(name="campus_fk")
 	private Campus campus;
 	
 	public User() {

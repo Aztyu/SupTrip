@@ -21,7 +21,7 @@ public class Trip {
 	private Campus destination;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-    private Date dateCreated;
+    private Date tripDate;
 	
 	private String description;
 
@@ -37,9 +37,6 @@ public class Trip {
 		return destination;
 	}
 
-	public Date getDateCreated() {
-		return dateCreated;
-	}
 
 	public String getDescription() {
 		return description;
@@ -57,11 +54,15 @@ public class Trip {
 		this.destination = destination;
 	}
 
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
-	}
-
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Date getTripDate() {
+		return tripDate;
+	}
+
+	public void setTripDate(Date tripDate) {
+		this.tripDate = tripDate;
 	}
 }
