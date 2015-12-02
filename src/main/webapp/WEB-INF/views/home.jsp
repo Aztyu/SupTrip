@@ -5,6 +5,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Home</title>
+		<link rel="icon" href="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" type="image/x-icon">
+		
 	</head>
 	<body>
 		<a href="${pageContext.request.contextPath}/trips">See trips</a>
@@ -12,6 +14,9 @@
 		<a href="${pageContext.request.contextPath}/logout">Logout</a>
 		
 		<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>
+		<img src="http://i.imgur.com/Bv3elgV.jpg" />
+		<img src="http://www.campus-booster.net/actorpictures/171042.jpg" />
+		<a href="www.campus-booster.net/actorpictures/"><img src="171042.jpg" alt="canard"/></a>
 		<p></p>
 	</body>
 </html>
