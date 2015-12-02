@@ -12,6 +12,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Trip {
+	static final long serialVersionUID = 564545644L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -38,7 +40,6 @@ public class Trip {
 	public Campus getDestination() {
 		return destination;
 	}
-
 
 	public String getDescription() {
 		return description;

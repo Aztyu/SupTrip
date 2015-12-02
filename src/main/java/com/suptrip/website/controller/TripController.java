@@ -1,5 +1,6 @@
 package com.suptrip.website.controller;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -19,13 +20,18 @@ import com.suptrip.website.entity.Trip;
 public class TripController {
 	@RequestMapping(value = "/trips", method = RequestMethod.GET)
 	public String trip(HttpServletRequest req) {		//Show the form
-		req.setAttribute("trips", TripDAO.getAllTrips().subList(0, 15));
-		return "trips";
+		List<Trip> trips = TripDAO.getAllTrips();
+		if(trips.size() > 15){
+			req.setAttribute("trips", trips.subList(0, 15));
+		}else{
+			req.setAttribute("trips", trips);
+		}
+		return "trip/trips";
 	}
 	
 	@RequestMapping(value = "/trips/{page_id}", method = RequestMethod.GET)
 	public String tripAtPage(HttpServletRequest req, @PathVariable(value="page_id") final String id) {		//Show the form
-		return "trips";
+		return "trip/trips";
 	}
 	
 	@RequestMapping(value = "/create/trip", method = RequestMethod.GET)

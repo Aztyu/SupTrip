@@ -6,6 +6,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class User {
+	static final long serialVersionUID = 7852134L;
 	
 	@Id
 	private int booster_id;

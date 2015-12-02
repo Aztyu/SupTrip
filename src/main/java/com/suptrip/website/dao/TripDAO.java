@@ -13,13 +13,13 @@ public class TripDAO {
 	@SuppressWarnings("unchecked")
 	public static List<Trip> getAllTrips(){
 		EntityManager em = PersistanceManager.getEntityManager();
-        Query query = em.createQuery("SELECT c FROM Campus c");
+        Query query = em.createQuery("SELECT t FROM Trip t");
         return (List<Trip>)query.getResultList();
 	}
 	
 	public static long tripNumber(){
 		EntityManager em = PersistanceManager.getEntityManager();
-        Query query = em.createQuery("SELECT COUNT(c.id) FROM Trip c");
+        Query query = em.createQuery("SELECT COUNT(t.id) FROM Trip t");
         return (Long)query.getSingleResult();
 	}
 
