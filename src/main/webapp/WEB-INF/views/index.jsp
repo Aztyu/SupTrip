@@ -5,6 +5,7 @@
 		<title>Home</title>
 		<!-- CSS -->
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<h1>
@@ -14,9 +15,8 @@
 		
 		<h2>  This is the home of SUPINFO own trip website ! </h2>
 		
-		<p>There are currently ${ users } users and ${ trips } trips organized. Welcome aboard !!</p>
-	
 		
+		<p>There are currently ${ users } users and ${ trips } trips organized. Welcome aboard !!<p>
 	
 		<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
 	        <p>ID Booster :</p>
