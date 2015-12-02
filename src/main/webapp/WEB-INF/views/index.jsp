@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<title>Home</title>
+		<!-- CSS -->
+		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 	</head>
 	<body>
 		<h1>
@@ -29,5 +31,9 @@
 		<c:if test="${not empty message}">
 			<p style="color:red">${message}</p>
 		</c:if>
+		
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="<c:url value="/resources/js/index.js"/>"></script>
 	</body>
 </html>

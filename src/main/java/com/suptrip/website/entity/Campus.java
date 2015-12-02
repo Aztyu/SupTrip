@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Campus {
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -31,8 +30,6 @@ public class Campus {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
 
 	public String getName() {
 		return name;

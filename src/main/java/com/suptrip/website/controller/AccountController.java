@@ -51,7 +51,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 	public String logout(HttpServletRequest req) {
 		HttpSession s = req.getSession();
 		s.removeAttribute("user");
-		return "index";
+		return "redirect:index";
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)

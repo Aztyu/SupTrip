@@ -33,7 +33,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
 		model.addAttribute("users", UserDAO.userNumber());
-		//model.addAttribute("trips", TripDAO.tripNumber());
+		model.addAttribute("trips", TripDAO.tripNumber());
 		return "index";
 	}
 	

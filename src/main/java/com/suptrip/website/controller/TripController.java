@@ -51,10 +51,10 @@ public class TripController {
 			trip.setDescription(description);
 			trip.setStart(CampusDAO.getCampusFromId(start));
 			trip.setDestination(CampusDAO.getCampusFromId(end));
-			trip.setDateCreated(new Date());
+			trip.setTripDate(new Date());
 			
 			TripDAO.addTrip(trip);
-			return "redirect:home";
+			return "home";
 		}catch(Exception ex){
 			req.setAttribute("message", "Server error, please retry");
 			return "trip/create";
