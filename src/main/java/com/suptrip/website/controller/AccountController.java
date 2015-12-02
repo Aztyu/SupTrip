@@ -21,7 +21,7 @@ import com.suptrip.website.entity.User;
 public class AccountController {
 private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	@RequestMapping(value = "/loginRequest", method = {RequestMethod.POST})
+	@RequestMapping(value = "/loginRequest", method = RequestMethod.POST)
 	public String loginRequest(HttpServletRequest req) {
 		try{
 			if(req.getParameter("id") != null && req.getParameter("password") != null){	//Login password and username were sent
@@ -51,7 +51,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 	public String logout(HttpServletRequest req) {
 		HttpSession s = req.getSession();
 		s.removeAttribute("user");
-		return "redirect:index";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
