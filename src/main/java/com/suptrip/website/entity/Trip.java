@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Trip {
 	static final long serialVersionUID = 564545644L;
@@ -18,12 +20,15 @@ public class Trip {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+	@JsonProperty("start_campus")
 	@ManyToOne
 	private Campus start;
 	
+	@JsonProperty("destination_campus")
 	@ManyToOne
 	private Campus destination;
 	
+	@JsonProperty("departure_date")
 	@Temporal(TemporalType.TIMESTAMP)
     private Date tripDate;
 	
