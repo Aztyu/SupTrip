@@ -9,10 +9,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
+import org.joda.time.Instant;
+import org.joda.time.Interval;
+import org.joda.time.Period;
+import org.joda.time.format.PeriodFormat;
+import org.joda.time.format.PeriodFormatter;
+import org.joda.time.format.PeriodFormatterBuilder;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
+@JsonIgnoreProperties({"remaining_time"})
 public class Trip {
 	static final long serialVersionUID = 564545644L;
 	
@@ -31,6 +43,9 @@ public class Trip {
 	@JsonProperty("departure_date")
 	@Temporal(TemporalType.TIMESTAMP)
     private Date tripDate;
+	
+	@Transient
+	private Period remaining_time;
 	
 	private String description;
 
@@ -72,5 +87,21 @@ public class Trip {
 
 	public void setTripDate(Date tripDate) {
 		this.tripDate = tripDate;
+	}
+	
+	public String getRemaining_time() {
+		PeriodFormatter pf = new PeriodFormatterBuilder()
+		    .appendDays()
+		    .appendSuffix(" day", " days")
+		    .appendSeparator(" and ")
+		    .appendMinutes()
+		    .appendSuffix(" minute", " minutes")
+		    .toFormatter();
+		return pf.print(remaining_time);
+	}
+
+	public void updateDuration(){
+		Period p = new Period(new DateTime(), new DateTime(tripDate.getTime()));
+		this.remaining_time = p;
 	}
 }

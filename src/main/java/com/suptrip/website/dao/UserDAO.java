@@ -5,7 +5,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import com.suptrip.website.database.PersistanceManager;
-import com.suptrip.website.entity.Campus;
 import com.suptrip.website.entity.User;
 
 public class UserDAO {

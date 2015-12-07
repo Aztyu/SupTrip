@@ -1,6 +1,5 @@
 package com.suptrip.website.dao;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
