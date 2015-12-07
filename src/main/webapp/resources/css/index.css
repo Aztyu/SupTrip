@@ -1,3 +1,25 @@
-h1{
-	color: red;
+body 
+{
+	background-color: gray;
+	border-width:2px;
+}
+
+h2 {
+    color: blue;
+}
+p {
+	margin-bottom : -50px;
+}
+.baniere {
+   position : absolute;
+   width: 80%;
+   height: auto;
+   left : 55%;
+   margin-left : -150px;
+   margin-top : -10px;
+}
+.formu {
+
+   margin-left: 40px;
+   margin-top : 35px;
 }
