@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Trip creation</title>
+		<title>Create Trips</title>
 		<link href="<c:url value="/resources/js/library/jquery-ui/jquery-ui.min.css"/>" rel="stylesheet">
 		<link href="<c:url value="/resources/js/library/jquery-ui/jquery-ui.structure.min.css"/>" rel="stylesheet">
 		<link href="<c:url value="/resources/js/library/jquery-ui/jquery-ui.theme.min.css"/>" rel="stylesheet">
@@ -37,55 +37,56 @@
 
 </nav>
 	<div class="formu">
+	<h1>Create a new trip</h1>
+	<br></br>
 		<form method="POST" action="${pageContext.request.contextPath}/create/tripRequest">
         <p>Description:</p>
         <input type="text" name="description">
-        
+        <br></br>
         <p>Departure:</p>
         <select name="campus_start"> 
 			<c:forEach var="campus" items="${campus_list}">
 				<option value="${campus.id}">${campus.name}</option>
 			</c:forEach>
 		</select> 
-		
+		<br></br>
 		<p>Arrival:</p>
         <select name="campus_end"> 
 			<c:forEach var="campus" items="${campus_list}">
 				<option value="${campus.id}">${campus.name}</option>
 			</c:forEach>
 		</select>
-		
+		<br></br>
 		<p>Departure date:</p>
 		<input name="date" type="text" id="datepicker">
-		 
+		 <br></br>
 		 <p>Departure time:</p>
 		 <select name="hour"> 
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10" selected>10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
-			<option value="13">13</option>
-			<option value="14">14</option>
-			<option value="15">15</option>
-			<option value="16">16</option>
-			<option value="17">17</option>
-			<option value="18">18</option>
-			<option value="19">19</option>
-			<option value="20">20</option>
-			<option value="21">21</option>
-			<option value="22">22</option>
-			<option value="23">23</option>
+			<option value="0">0 h</option>
+			<option value="1">1 h</option>
+			<option value="2">2 h</option>
+			<option value="3">3 h</option>
+			<option value="4">4 h</option>
+			<option value="5">5 h</option>
+			<option value="6">6 h</option>
+			<option value="7">7 h</option>
+			<option value="8">8 h</option>
+			<option value="9">9 h</option>
+			<option value="10" selected>10 h</option>
+			<option value="11">11 h</option>
+			<option value="12">12 h</option>
+			<option value="13">13 h</option>
+			<option value="14">14 h</option>
+			<option value="15">15 h</option>
+			<option value="16">16 h</option>
+			<option value="17">17 h</option>
+			<option value="18">18 h</option>
+			<option value="19">19 h</option>
+			<option value="20">20 h</option>
+			<option value="21">21 h</option>
+			<option value="22">22 h</option>
+			<option value="23">23 h</option>
 		</select>
-		
 		<select name="minute"> 
 			<option value="0">0</option>
 			<option value="5">5</option>
@@ -100,7 +101,7 @@
 			<option value="50">50</option>
 			<option value="55">55</option>
 		</select>
-     
+     	<br></br>
         <input type="submit" value="Create new trip" />
     </form>
     

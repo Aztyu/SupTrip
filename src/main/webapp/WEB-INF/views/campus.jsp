@@ -7,11 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<title>Insert title here</title>
+<title>Create Campus</title>
 </head>
-<body>
 
-	<nav class="navbar navbar-inverse">
+<body>
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
@@ -30,22 +30,26 @@
         </ul>
     </div>
   </div>
-
 </nav>
+
+
+
 <div class="formu">
+<h1>Create a Campus</h1>
+<br></br>
 	<form method="POST" action="${pageContext.request.contextPath}/campus">
         <p>Campus name :</p>
         <input type="text" name="name">
-        
+        <br></br>
         <p>Address :</p>
         <input type="text" name="address">
-        
+        <br></br>
         <p>City :</p>
         <input type="text" name="city">
-        
+        <br></br>
         <p>Postal code:</p>
         <input type="text" name="postal_code">
-        
+        <br></br>
         <input type="submit" value="Create campus" />
     </form>
 </div>

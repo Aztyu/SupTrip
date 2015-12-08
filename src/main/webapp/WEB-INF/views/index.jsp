@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <html>
 	<head>
-		<title>Home</title>
+		<title>SupTrip</title>
 		<!-- CSS -->
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">

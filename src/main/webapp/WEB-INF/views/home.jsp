@@ -39,7 +39,6 @@
 
 </nav>
 	<div class="formu">
-		<br></br>
 		<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>
 		
 		<img src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" >
