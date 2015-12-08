@@ -2,15 +2,22 @@ package com.suptrip.website.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AuthInterceptor extends HandlerInterceptorAdapter{
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("Pre-handle");
-         
-        return true;
+        HttpSession session = request.getSession();
+        
+        if(session != null && session.getAttribute("user") != null){
+        	System.out.println("Connecté");
+        	return true;
+        }else{
+        	response.sendRedirect(request.getContextPath() + "/");
+        	System.out.println("déconnexion");
+        	return false;
+        }
     }
 
 }

@@ -27,7 +27,7 @@
 	
 	<interceptors>
 		<interceptor>
-        	<mapping path="/auth/*" />
+        	<mapping path="/auth/**" />
 	        <beans:bean class="com.suptrip.website.interceptor.AuthInterceptor" />
 		</interceptor>
 	</interceptors>

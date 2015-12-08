@@ -94,7 +94,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 					
 					UserDAO.addUser(user);
 					req.getSession().setAttribute("user", user);
-					return "redirect:home";
+					return "redirect:auth/home";
 				}else{
 					req.setAttribute("message", "Passwords do not match");
 					return "register";
