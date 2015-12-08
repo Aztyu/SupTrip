@@ -7,8 +7,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
+		
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/logout">SupTrip</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<h2>Inscris-toi maggle</h2>
+
 	<form method="POST" action="${pageContext.request.contextPath}/registerRequest">
         <p>ID Booster:</p>
         <input type="text" name="id_booster"
