@@ -43,7 +43,7 @@
 		</h4>
 		<div id="login">
 		
-		<h3><span class="fontawesome-lock"></span>Sign In</h3>
+		<h3><span class="fontawesome-lock"></span>LOGIN</h3>
 		<fieldset>
   			<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
 	        <p>ID Booster :</p>
