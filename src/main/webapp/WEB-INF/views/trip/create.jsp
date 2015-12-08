@@ -11,7 +11,7 @@
 		<link href="<c:url value="/resources/js/library/jquery-ui/jquery-ui.theme.min.css"/>" rel="stylesheet">
 	</head>
 	<body>
-		<form method="POST" action="${pageContext.request.contextPath}/create/tripRequest">
+		<form method="POST" action="${pageContext.request.contextPath}/auth/create/tripRequest">
         <p>Description:</p>
         <input type="text" name="description">
         

@@ -11,6 +11,8 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	
+	
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
@@ -23,6 +25,11 @@
 	
 	<context:component-scan base-package="com.suptrip.website" />
 	
-	
+	<interceptors>
+		<interceptor>
+        	<mapping path="/auth/*" />
+	        <beans:bean class="com.suptrip.website.interceptor.AuthInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>

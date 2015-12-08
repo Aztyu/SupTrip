@@ -20,7 +20,7 @@ import com.suptrip.website.entity.Trip;
 
 @Controller
 public class TripController {
-	@RequestMapping(value = "/trips", method = RequestMethod.GET)
+	@RequestMapping(value = "auth/trips", method = RequestMethod.GET)
 	public String trip(HttpServletRequest req) {		//Show the form
 		List<Trip> trips = TripDAO.getAllAvailableTrips();
 		if(trips.size() > 15){
@@ -31,19 +31,19 @@ public class TripController {
 		return "trip/trips";
 	}
 	
-	@RequestMapping(value = "/trips/{page_id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/auth/trips/{page_id}", method = RequestMethod.GET)
 	public String tripAtPage(HttpServletRequest req, @PathVariable(value="page_id") final String id) {		//Show the form
 		return "trip/trips";
 	}
 	
-	@RequestMapping(value = "/create/trip", method = RequestMethod.GET)
+	@RequestMapping(value = "/auth/create/trip", method = RequestMethod.GET)
 	public String tripCreate(HttpServletRequest req) {		//Show the form
 		List<Campus> campus_list = CampusDAO.getAllCampus();
 		req.setAttribute("campus_list", campus_list);
 		return "trip/create";
 	}
 	
-	@RequestMapping(value = "/create/tripRequest", method = RequestMethod.POST)
+	@RequestMapping(value = "/auth/create/tripRequest", method = RequestMethod.POST)
 	public String tripCreateRequest(HttpServletRequest req) {		//Show the form
 		try{
 			List<Campus> campus_list = CampusDAO.getAllCampus();		//Load campuses in case of error

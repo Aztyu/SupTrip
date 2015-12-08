@@ -32,7 +32,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 				}else{
 					HttpSession s = req.getSession();
 					s.setAttribute("user", user);
-					return "redirect:home";
+					return "redirect:auth/home";
 				}
 			}else{
 				req.setAttribute("message", "Please fill in every field");
@@ -47,7 +47,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		}
 	}
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/auth/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest req) {
 		HttpSession s = req.getSession();
 		s.removeAttribute("user");

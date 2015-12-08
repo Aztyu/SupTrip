@@ -37,7 +37,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/auth/home", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		return "home";
 	}
