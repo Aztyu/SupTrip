@@ -26,7 +26,7 @@
     </div>
   </div>
 </nav>
-
+<div class="formu">
 <h2>Inscris-toi maggle</h2>
 
 	<form method="POST" action="${pageContext.request.contextPath}/registerRequest">
@@ -78,6 +78,6 @@
 		<p style="color:red">${message}</p>
 	</c:if>
     
-
+</div>
 </body>
 </html>

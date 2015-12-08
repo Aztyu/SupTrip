@@ -13,7 +13,7 @@
 </head>
 
 <body>
-		<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
@@ -21,18 +21,20 @@
     <div>
       <ul class="nav navbar-nav">
         
-        <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/trips">See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/create/trip">Create a new trip</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
+        <li><a href="${pageContext.request.contextPath}/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="${pageContext.request.contextPath}/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
+        <li><a href="${pageContext.request.contextPath}/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
+        <li><a href="${pageContext.request.contextPath}/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
+        <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ${sessionScope.user.firstname} ${sessionScope.user.lastname}</a></li>
         </ul>
     </div>
   </div>
+
 </nav>
-		
+<div class="formu">		
 		<p>Here are the trips</p>
 	
 	<c:forEach items="${trips}" var="trip">
@@ -40,5 +42,6 @@
 			<h1>${ trip.description }</h1>
 		</div>
 	</c:forEach>
+	</div>
 </body>
 </html>

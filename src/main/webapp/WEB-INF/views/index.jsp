@@ -14,6 +14,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+    
       <a class="navbar-brand" href="${pageContext.request.contextPath}/logout">SupTrip</a>
     </div>
     <div>
@@ -25,30 +26,40 @@
         </ul>
     </div>
   </div>
+
 </nav>
 
-		<div class="baniere"><img src="<c:url value="/resources/image/carte.png"/>" > </div>
+		<div class="baniere">
+		<img src="<c:url value="/resources/image/carte.png"/>" >
+		</div>
 		
 		<div class="formu">
 		
 		<h4>
-			<p>There are currently ${ users } users and ${ trips } trips organized.<p> 
-			<p>Welcome aboard !!<p>
+			There are currently ${ users } users and ${ trips } trips organized.
+			<br></br>
+			Welcome aboard !!
+			<br></br>
 		</h4>
+		<div id="login">
 		
-		<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
+		<h3><span class="fontawesome-lock"></span>Sign In</h3>
+		<fieldset>
+  			<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
 	        <p>ID Booster :</p>
 	        <input type="text" name="id">
-	        
+	        <br></br>
 	        <p>Password :</p>
 	        <input type="password" name="password">
-	        
+	        <br></br>
 	        <input type="submit" value="Connect" />
 	    </form>
 	    
 		<c:if test="${not empty message}">
 			<p style="color:red">${message}</p>
 		</c:if>
+		</fieldset>
+		</div>
 		</div>
 		
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

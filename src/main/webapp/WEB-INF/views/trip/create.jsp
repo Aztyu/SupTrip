@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -15,7 +15,7 @@
 	</head>
 	
 	<body>
-		<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
@@ -23,18 +23,20 @@
     <div>
       <ul class="nav navbar-nav">
         
-        <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/trips">See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/create/trip">Create a new trip</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
+        <li><a href="${pageContext.request.contextPath}/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="${pageContext.request.contextPath}/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
+        <li><a href="${pageContext.request.contextPath}/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
+        <li><a href="${pageContext.request.contextPath}/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
+        <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ${sessionScope.user.firstname} ${sessionScope.user.lastname}</a></li>
         </ul>
     </div>
   </div>
+
 </nav>
-		
+	<div class="formu">
 		<form method="POST" action="${pageContext.request.contextPath}/create/tripRequest">
         <p>Description:</p>
         <input type="text" name="description">
@@ -106,5 +108,6 @@
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/library/jquery-ui/jquery-ui.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/resources/js/tripcreate.js"/>"></script>
+	</div>
 	</body>
 </html>
