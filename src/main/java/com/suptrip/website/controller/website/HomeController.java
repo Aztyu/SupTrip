@@ -42,12 +42,12 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/campus", method = RequestMethod.GET)
+	@RequestMapping(value = "/auth/campus", method = RequestMethod.GET)
 	public String campusGet(HttpServletRequest req) {		//Show the form
 		return "campus";
 	}
 	
-	@RequestMapping(value = "/campus", method = RequestMethod.POST)
+	@RequestMapping(value = "/auth/campus", method = RequestMethod.POST)
 	public String campusPost(HttpServletRequest req) {
 		try{
 			String name = (String) req.getParameter("name");
@@ -61,10 +61,10 @@ public class HomeController {
 			campus.setPostal_code(Integer.parseInt(postal_code));
 			CampusDAO.addCampus(campus);
 			req.setAttribute("message", "Campus was created");
-			return "campus";
+			return "redirect:/auth/home";
 		}catch(Exception ex){
 			req.setAttribute("message", ex.getMessage());
-			return "campus";
+			return "redirect:/auth/home";
 		}
 	}
 	

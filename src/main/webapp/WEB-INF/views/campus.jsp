@@ -14,15 +14,15 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/auth/home">SupTrip</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
         
-        <li><a href="${pageContext.request.contextPath}/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
-        <li><a href="${pageContext.request.contextPath}/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -37,12 +37,10 @@
   </div>
 </nav>
 
-
-
 <div class="formu">
 <h1>Create a Campus</h1>
 <br></br>
-	<form method="POST" action="${pageContext.request.contextPath}/campus">
+	<form method="POST" action="${pageContext.request.contextPath}/auth/campus">
         <p>Campus name :</p>
         <input type="text" name="name">
         <br></br>
