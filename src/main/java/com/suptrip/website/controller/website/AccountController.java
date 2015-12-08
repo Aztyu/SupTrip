@@ -47,7 +47,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		}
 	}
 	
-	@RequestMapping(value = "/auth/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest req) {
 		HttpSession s = req.getSession();
 		s.removeAttribute("user");

@@ -15,29 +15,24 @@
   
 	</head>
 	<body>
-		<a href="${pageContext.request.contextPath}/auth/trips">See trips</a>
-		<a href="${pageContext.request.contextPath}/auth/create/trip">Create a new trip</a>
-		<a href="${pageContext.request.contextPath}/auth/logout">Logout</a>
-		
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        
-        <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/trips">See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/create/trip">Create a new trip</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Nom/Photo</a></li>
-        </ul>
-    </div>
-  </div>
-</nav>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
+		    </div>
+		    <div>
+		      <ul class="nav navbar-nav">
+		        <li><a href="${pageContext.request.contextPath}/auth/home">Home</a></li>
+		        <li><a href="${pageContext.request.contextPath}/auth/trips">See trips</a></li> 
+		        <li><a href="${pageContext.request.contextPath}/auth/create/trip">Create a new trip</a></li>
+		        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Nom/Photo</a></li>
+		        </ul>
+		    </div>
+		  </div>
+		</nav>
 	
 		<br></br>
 		<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>

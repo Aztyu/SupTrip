@@ -20,10 +20,9 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        
-        <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/trips">See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/create/trip">Create a new trip</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/home">Home</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/trips">See trips</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/create/trip">Create a new trip</a></li>
         <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
