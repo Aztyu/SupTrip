@@ -9,35 +9,45 @@
 		
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<title>Insert title here</title>
+<title>See Trips</title>
 </head>
 
 <body>
-		<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/home">SupTrip</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/auth/home">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/auth/trips">See trips</a></li> 
-        <li><a href="${pageContext.request.contextPath}/auth/create/trip">Create a new trip</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li> 
+        
+        <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
+        <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li class="toto">
+        <a href="">
+        	<img class="id_img" src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" />
+        	</span> ${sessionScope.user.firstname} ${sessionScope.user.lastname} 
+        </a>
+        </li>
         </ul>
     </div>
   </div>
+
 </nav>
-		
-		<p>Here are the trips</p>
+<div class="formu">		
+		<h1>Here are the trips</h1>
+		<br></br>
 	
 	<c:forEach items="${trips}" var="trip">
 		<div>
-			<h1>${ trip.description }</h1>
+			<h4>* The trip "${ trip.description }" from ${ trip.start.name } to ${ trip.destination.name } is in ${ trip.remaining_time }</h4>
 		</div>
 	</c:forEach>
+	</div>
 </body>
 </html>

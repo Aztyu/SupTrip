@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register</title>
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 		
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,6 +19,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
+      <li><a href="#">The home of SUPINFO own trip website</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -26,7 +27,7 @@
     </div>
   </div>
 </nav>
-
+<div class="formu">
 <h2>Inscris-toi maggle</h2>
 
 	<form method="POST" action="${pageContext.request.contextPath}/registerRequest">
@@ -36,41 +37,41 @@
 				value=${id}
 			</c:if>
         >
-        
+        <br></br>
         <p>Firstname:</p>
         <input type="text" name="firstname"
         	<c:if test="${not empty firstname}">
 				value=${firstname}
 			</c:if>
         >
-        
+        <br></br>
         <p>Lastname:</p>
         <input type="text" name="lastname"
         	<c:if test="${not empty lastname}">
 				value=${lastname}
 			</c:if>
         >
-        
+        <br></br>
         <p>Email:</p>
         <input type="text" name="email"
         	<c:if test="${not empty email}">
 				value=${email}
 			</c:if>
         >
-        
+        <br></br>
         <p>Password:</p>
         <input type="password" name="password">
-        
+        <br></br>
          <p>Password(verification):</p>
         <input type="password" name="password_v">
-        
+        <br></br>
         <p>Campus:</p>
         <select name="campus"> 
 			<c:forEach var="campus" items="${campus_list}">
 				<option value="${campus.id}">${campus.name}</option>
 			</c:forEach>
 		</select> 
-        
+        <br></br>
         <input type="submit" value="S'inscrire" />
     </form>
     
@@ -78,6 +79,6 @@
 		<p style="color:red">${message}</p>
 	</c:if>
     
-
+</div>
 </body>
 </html>

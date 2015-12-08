@@ -15,11 +15,103 @@ p {
    width: 80%;
    height: auto;
    left : 55%;
-   margin-left : -150px;
-   margin-top : -10px;
+   margin-left : -190px;
+   margin-top : 10px;
 }
 .formu {
 
    margin-left: 40px;
    margin-top : 35px;
+}
+.formu p {
+color : #4298D0 ;
+font-weight:bold;	
+}
+.formuhome {
+width: 20%;
+height : auto;
+}
+
+
+
+input {
+	
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	-webkit-appearance: none;
+}
+
+
+#login {
+	
+	width: 300px;
+}
+
+#login h3 {
+	background-color: #4298D0;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 25px;
+	padding: 12px 26px;
+}
+
+#login h3 span[class*="fontawesome-"] {
+	margin-right: 80px;
+}
+
+#login fieldset {
+	background-color: #E5E4E4;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
+}
+
+#login fieldset p {
+	color: #777;
+	margin-bottom: 12px;
+}
+
+#login fieldset p:last-child {
+	margin-bottom: 0px;
+}
+
+#login fieldset input {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#login fieldset input[type="id"], #login fieldset input[type="password"] {
+	background-color: #eee;
+	color: #777;
+	padding: 4px 10px;
+	width: 175px;
+}
+
+#login fieldset input[type="submit"] {
+	background-color: #4298D0;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 100px;
+}
+.id_img{
+	vertical-align: middle;
+    height: 40px;
+    margin: 5px;
+    width: 40px;
+    border-radius: 23px;
+}
+.toto>a{
+	margin-right: 12px;
+    padding: 0px!important;
+}
+#login fieldset input[type="submit"]:hover {
+	background-color: #4298D0;
 }
