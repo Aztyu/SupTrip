@@ -28,18 +28,24 @@
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ${sessionScope.user.firstname} ${sessionScope.user.lastname}</a></li>
+        <li class="toto">
+        <a href="">
+        	<img class="id_img" src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" />
+        	</span> ${sessionScope.user.firstname} ${sessionScope.user.lastname} 
+        </a>
+        </li>
         </ul>
     </div>
   </div>
 
 </nav>
 <div class="formu">		
-		<p>Here are the trips</p>
+		<h1>Here are the trips</h1>
+		<br></br>
 	
 	<c:forEach items="${trips}" var="trip">
 		<div>
-			<h1>${ trip.description }</h1>
+			<h4>* The trip "${ trip.description }" from ${ trip.start.name } to ${ trip.destination.name } is in ${ trip.remaining_time }</h4>
 		</div>
 	</c:forEach>
 	</div>

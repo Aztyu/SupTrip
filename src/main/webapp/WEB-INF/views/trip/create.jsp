@@ -30,7 +30,12 @@
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ${sessionScope.user.firstname} ${sessionScope.user.lastname}</a></li>
+        <li class="toto">
+        <a href="">
+        	<img class="id_img" src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" />
+        	</span> ${sessionScope.user.firstname} ${sessionScope.user.lastname} 
+        </a>
+        </li>
         </ul>
     </div>
   </div>

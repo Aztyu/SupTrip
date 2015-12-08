@@ -94,6 +94,9 @@ public class Trip {
 		    .appendDays()
 		    .appendSuffix(" day", " days")
 		    .appendSeparator(" and ")
+		    .appendHours()
+		    .appendSuffix(" hour"," hours")
+		    .appendSeparator(" and ")
 		    .appendMinutes()
 		    .appendSuffix(" minute", " minutes")
 		    .toFormatter();

@@ -101,7 +101,17 @@ input {
 	padding: 4px 0;
 	width: 100px;
 }
-
+.id_img{
+	vertical-align: middle;
+    height: 40px;
+    margin: 5px;
+    width: 40px;
+    border-radius: 23px;
+}
+.toto>a{
+	margin-right: 12px;
+    padding: 0px!important;
+}
 #login fieldset input[type="submit"]:hover {
 	background-color: #4298D0;
 }
