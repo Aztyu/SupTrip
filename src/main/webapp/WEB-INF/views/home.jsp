@@ -23,7 +23,7 @@
 		    <div>
 		      <ul class="nav navbar-nav">
 		        
-		        <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+		        <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-home"></span> Home/Profile</a></li>
 		        <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
 		        <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
 		        <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
@@ -43,14 +43,18 @@
 		</nav>
 		<div class="formu">
 			<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>
-			<img src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" >
+			
+			<img src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" class = imageprof>
+			
+			<br></br>
+			<p>ID Booster: ${sessionScope.user.booster_id}</p>	
 		</div>
 		
-		<p>Modify profile</p>
+		<div class = "modify">
+		<h3>Modify profile</h3>
 		
 		<form method="POST" action="${pageContext.request.contextPath}/auth/home">
-	        <p>ID Booster: ${sessionScope.user.booster_id}</p>
-	        <br></br>
+	        
 	        
 	        <p>Firstname:</p>
 	        <input type="text" name="firstname"
@@ -80,8 +84,9 @@
 					<option value="${campus.id}">${campus.name}</option>
 				</c:forEach>
 			</select> 
-	        <br></br>
-	        <input type="submit" value="S'inscrire" />
+	       
+	        <input type="submit" value="Edit" />
 	    </form>
+	   </div>
 	</body>
 </html>

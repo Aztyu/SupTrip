@@ -103,9 +103,9 @@ input {
 }
 .id_img{
 	vertical-align: middle;
-    height: 40px;
-    margin: 5px;
-    width: 40px;
+    height: 35px;
+    margin: 7px 4px;
+    width: 35px;
     border-radius: 23px;
 }
 .toto>a{
@@ -151,4 +151,21 @@ h4 {
 h5
 {
 	margin-left : 10px;
+}
+.modify{
+	
+	margin-top : -210px;
+    margin-left: 700px; 
+}
+.modify p {
+	color : #4298D0 ;
+	font-weight:bold;
+}
+.imageprof {
+	
+	margin-top : 10 px;
+	height: 100px;
+	width : auto;
+	border: solid 2px #4298D0; 
+	border-radius : 10px;
 }
