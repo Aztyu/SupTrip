@@ -103,9 +103,9 @@ input {
 }
 .id_img{
 	vertical-align: middle;
-    height: 40px;
-    margin: 5px;
-    width: 40px;
+    height: 35px;
+    margin: 7px 4px;
+    width: 35px;
     border-radius: 23px;
 }
 .toto>a{

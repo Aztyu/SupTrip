@@ -29,7 +29,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="toto">
-        <a href="">
+        <a href="${pageContext.request.contextPath}/auth/home">
         	<img class="id_img" src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" />
         	</span> ${sessionScope.user.firstname} ${sessionScope.user.lastname} 
         </a>
