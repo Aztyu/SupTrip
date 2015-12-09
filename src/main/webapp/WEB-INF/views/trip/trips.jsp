@@ -40,12 +40,31 @@
 
 </nav>
 <div class="formu">		
-		<h1>Here are the trips</h1>
+		<h1>Here are the trips by campus name:</h1>
 		<br></br>
-	
+		<p>Select the campus:</p>
+		<select name="#"> 
+			<c:forEach var="campus" items="${campus_list}">
+				<option value="${campus.id}">${campus.name}</option>
+			</c:forEach>
+		</select>
+		
 	<c:forEach items="${trips}" var="trip">
 		<div>
-			<h4>* The trip "${ trip.description }" from ${ trip.start.name } to ${ trip.destination.name } is in ${ trip.remaining_time }</h4>
+		<ol class="trips">
+			
+			<li>
+			<ul>
+			<li><h4>${ trip.description }</h4></li>
+			<li><h5><b>FROM :</b></h5>
+				<h5>${ trip.start.name }</h5></li>
+			<li><h5><b>TO :</b></h5>
+				<h5>${ trip.destination.name }</h5></li>
+			<li><h5><b>REMAINING TIME :</b></h5>
+				<h5>${ trip.remaining_time }</h5></li>
+			</ul>  
+			</li>
+		</ol>
 		</div>
 	</c:forEach>
 	</div>

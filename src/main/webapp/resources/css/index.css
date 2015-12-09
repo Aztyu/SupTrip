@@ -115,3 +115,40 @@ input {
 #login fieldset input[type="submit"]:hover {
 	background-color: #4298D0;
 }
+
+li, ol { 
+	display: block; 
+	float: left; 
+	margin: 0; 
+	padding: 0; 
+} 
+	
+ol li { 
+	width: 15em; 
+	margin: 1em 6em 1em -2em; 
+	line-height: 2em; 
+	border: solid 2px #4298D0; 
+	border-radius : 15px;
+	height: auto; /* ou 29em */
+} 
+
+ol li li { 
+	/* ou width: 100%;  */
+	height: auto; /* ou 7em */
+	font-size: 0.8em; 
+	color: #666; 
+	border: none; 
+	background-color: #eeefe0;
+} 
+
+h4 {
+	
+	color : #437CA2!important;
+	margin-left : 15px;
+	
+}
+
+h5
+{
+	margin-left : 10px;
+}
