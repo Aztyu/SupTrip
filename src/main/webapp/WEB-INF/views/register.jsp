@@ -22,6 +22,7 @@
       <li><a href="#">The home of SUPINFO own trip website</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      	<li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         </ul>
     </div>

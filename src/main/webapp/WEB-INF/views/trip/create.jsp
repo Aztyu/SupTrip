@@ -45,7 +45,7 @@
 	<h1>Create a new trip</h1>
 	<br></br>
 		<form method="POST" action="${pageContext.request.contextPath}/auth/create/tripRequest">
-        <p>Description:</p>
+        <p>Description: (40 characters max)</p>
         <input type="text" name="description">
         <br></br>
         <p>Departure:</p>
