@@ -49,7 +49,7 @@
 					<option value="${campus.id}">${campus.name}</option>
 				</c:forEach>
 				</select>
-			<input type="submit" value="Search" />
+			<input type="submit" value="Search" style = "width : auto;"/>
    		</form>
 		
 		

@@ -84,7 +84,7 @@
 					<option value="${campus.id}">${campus.name}</option>
 				</c:forEach>
 			</select> 
-	       
+	        <br></br>
 	        <input type="submit" value="Edit" />
 	    </form>
 	   </div>
