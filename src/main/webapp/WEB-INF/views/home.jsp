@@ -44,7 +44,44 @@
 		<div class="formu">
 			<h2>Welcome ${sessionScope.user.firstname} ${sessionScope.user.lastname}</h2>
 			<img src="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" >
-			<p>J'aime la bite</p>
 		</div>
+		
+		<p>Modify profile</p>
+		
+		<form method="POST" action="${pageContext.request.contextPath}/auth/home">
+	        <p>ID Booster: ${sessionScope.user.booster_id}</p>
+	        <br></br>
+	        
+	        <p>Firstname:</p>
+	        <input type="text" name="firstname"
+				value="${sessionScope.user.firstname}"
+	        >
+	        <br></br>
+	        <p>Lastname:</p>
+	        <input type="text" name="lastname"
+	        	value="${sessionScope.user.lastname}"
+	        >
+	        <br></br>
+	        <p>Email:</p>
+	        <input type="text" name="email"
+	        	value="${sessionScope.user.email}"
+	        >
+	        <br></br>
+	        <p>Password:</p>
+	        <input type="password" name="password">
+	        <br></br>
+	         <p>Password(verification):</p>
+	        <input type="password" name="password_v">
+	        <br></br>
+	        
+	        <p>Campus:</p>
+	        <select name="campus"> 
+				<c:forEach var="campus" items="${campus_list}">
+					<option value="${campus.id}">${campus.name}</option>
+				</c:forEach>
+			</select> 
+	        <br></br>
+	        <input type="submit" value="S'inscrire" />
+	    </form>
 	</body>
 </html>

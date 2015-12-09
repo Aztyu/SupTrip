@@ -1,6 +1,5 @@
 package com.suptrip.website.controller.website;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +26,7 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 			if(req.getParameter("id") != null && req.getParameter("password") != null){	//Login password and username were sent
 				User user = UserDAO.getUser(Integer.parseInt((String)req.getParameter("id")), (String)req.getParameter("password"));
 				if(user == null){
-					req.setAttribute("message", "User does not exist");
+					req.setAttribute("message", "Please check your credentials");
 					return "index";
 				}else{
 					HttpSession s = req.getSession();

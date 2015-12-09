@@ -41,4 +41,13 @@ public class UserDAO {
         Query query = em.createQuery("SELECT COUNT(u.booster_id) FROM User u");
         return (Long)query.getSingleResult();
 	}
+	
+	public static void updateUser(User u){
+		EntityManager em = PersistanceManager.getEntityManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		em.merge(u);
+		et.commit();
+		em.close();
+	}
 }

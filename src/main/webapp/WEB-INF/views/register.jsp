@@ -28,8 +28,6 @@
   </div>
 </nav>
 <div class="formu">
-<h2>Inscris-toi maggle</h2>
-
 	<form method="POST" action="${pageContext.request.contextPath}/registerRequest">
         <p>ID Booster:</p>
         <input type="text" name="id_booster"
