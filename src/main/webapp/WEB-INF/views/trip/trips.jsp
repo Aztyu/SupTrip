@@ -47,6 +47,7 @@
 		<p>Select the campus:</p>
 		<form method="POST" action="${pageContext.request.contextPath}/auth/trips">
 			<select name="campus_id"> 
+				<option value="-1">-- Every campus --</option>
 				<c:forEach var="campus" items="${campus_list}">
 						<option value="${campus.id}"
 							<c:if test="${campus.id eq campus_id}">
