@@ -2,6 +2,7 @@ package com.suptrip.website.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -47,6 +48,7 @@ public class Trip {
 	@Transient
 	private Period remaining_time;
 	
+	@Column(columnDefinition = "TEXT")
 	private String description;
 
 	public int getId() {

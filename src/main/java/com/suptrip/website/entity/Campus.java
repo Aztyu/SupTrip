@@ -1,5 +1,6 @@
 package com.suptrip.website.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,10 +12,13 @@ public class Campus {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+	@Column(columnDefinition = "TEXT")
 	private String name;
 	
+	@Column(columnDefinition = "TEXT")
 	private String address;
 	
+	@Column(columnDefinition = "TEXT")
 	private String city;
 	
 	private int postal_code;

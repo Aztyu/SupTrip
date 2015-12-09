@@ -1,5 +1,6 @@
 package com.suptrip.website.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -11,12 +12,16 @@ public class User {
 	@Id
 	private int booster_id;
 	
+	@Column(columnDefinition = "TEXT")
 	private String firstname;
 	
+	@Column(columnDefinition = "TEXT")
 	private String lastname;
 	
+	@Column(columnDefinition = "TEXT")
 	private String password;
 	
+	@Column(columnDefinition = "TEXT")
 	private String email;
 	
 	@ManyToOne
