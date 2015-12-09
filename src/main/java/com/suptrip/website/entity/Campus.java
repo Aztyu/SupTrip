@@ -7,8 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Campus {
-	static final long serialVersionUID = 87864321L;
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;

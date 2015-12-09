@@ -24,6 +24,7 @@ public class TripController {
 	public String trip(HttpServletRequest req) {		//Show the form
 		List<Campus> campus_list = CampusDAO.getAllCampus();		//Load campuses in case of error
 		req.setAttribute("campus_list", campus_list);
+		
 		List<Trip> trips = TripDAO.getAllAvailableTrips();
 		if(trips.size() > 0){
 			req.setAttribute("trips", trips);
@@ -47,10 +48,10 @@ public class TripController {
 						break;
 					}
 				}
+				req.setAttribute("campus_id", campus_nb);
 				
 				List<Trip> trips = TripDAO.getTripsByCampusId(campus_nb);
 				if(trips.size() > 0){
-					req.setAttribute("campus_id", campus_nb);
 					req.setAttribute("trips", trips);
 				}else{
 					req.setAttribute("message", "No result found for " + request_campus.getName());

@@ -48,11 +48,15 @@
 		<form method="POST" action="${pageContext.request.contextPath}/auth/trips">
 			<select name="campus_id"> 
 				<c:forEach var="campus" items="${campus_list}">
+						<option value="${campus.id}"
+							<c:if test="${campus.id eq campus_id}">
+								selected
+							</c:if>
 						>${campus.name}</option>
-					</c:forEach>
-					</select>
-				<input type="submit" value="Search" />
-	   		</form>
+				</c:forEach>
+			</select>
+			<input type="submit" value="Search" />
+   		</form>
 			
 		<c:if test="${ not empty trips }">
 			<c:forEach items="${trips}" var="trip">
