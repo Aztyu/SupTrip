@@ -20,7 +20,6 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        
         <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
         <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
@@ -43,28 +42,39 @@
 		<h1>Here are the trips by campus name:</h1>
 		<br></br>
 		<p>Select the campus:</p>
-		<select name="#"> 
-			<c:forEach var="campus" items="${campus_list}">
-				<option value="${campus.id}">${campus.name}</option>
-			</c:forEach>
-		</select>
+		<form method="POST" action="${pageContext.request.contextPath}/auth/trips">
+			<select name="campus_id"> 
+				<c:forEach var="campus" items="${campus_list}">
+					<option value="${campus.id}">${campus.name}</option>
+				</c:forEach>
+				</select>
+			<input type="submit" value="Search" />
+   		</form>
+		
 		
 	<c:forEach items="${trips}" var="trip">
 		<div>
-		<ol class="trips">
-			
-			<li>
-			<ul>
-			<li><h4>${ trip.description }</h4></li>
-			<li><h5><b>FROM :</b></h5>
-				<h5>${ trip.start.name }</h5></li>
-			<li><h5><b>TO :</b></h5>
-				<h5>${ trip.destination.name }</h5></li>
-			<li><h5><b>REMAINING TIME :</b></h5>
-				<h5>${ trip.remaining_time }</h5></li>
-			</ul>  
-			</li>
-		</ol>
+			<ol class="trips">
+				<li>
+					<ul>
+						<li>
+							<h4>${ trip.description }</h4>
+						</li>
+						<li>
+							<h5><b>FROM :</b></h5>
+							<h5>${ trip.start.name }</h5>
+						</li>
+						<li>
+							<h5><b>TO :</b></h5>
+							<h5>${ trip.destination.name }</h5>
+						</li>
+						<li>
+							<h5><b>REMAINING TIME :</b></h5>
+							<h5>${ trip.remaining_time }</h5>
+						</li>
+					</ul>  
+				</li>
+			</ol>
 		</div>
 	</c:forEach>
 	</div>

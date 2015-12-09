@@ -19,6 +19,18 @@ public class TripDAO {
         return (List<Trip>)query.getResultList();
 	}
 	
+	public static List<Trip> getTripsByCampusId(int campus_id){
+		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		EntityManager em = PersistanceManager.getEntityManager();
+        Query query = em.createQuery("SELECT t FROM Trip t WHERE (t.start.id ="+campus_id+" OR t.destination.id ="+campus_id+") AND t.tripDate > '" + sdf.format(now) + "' ORDER BY t.tripDate ASC");
+        List<Trip> trips = (List<Trip>)query.getResultList();
+        for (Trip t : trips) {
+			t.updateDuration();
+		}
+        return (List<Trip>)query.getResultList();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public static List<Trip> getAllAvailableTrips(){
 		Date now = new Date();

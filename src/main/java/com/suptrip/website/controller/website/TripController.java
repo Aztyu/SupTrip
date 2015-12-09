@@ -22,17 +22,36 @@ import com.suptrip.website.entity.Trip;
 public class TripController {
 	@RequestMapping(value = "auth/trips", method = RequestMethod.GET)
 	public String trip(HttpServletRequest req) {		//Show the form
+		List<Campus> campus_list = CampusDAO.getAllCampus();		//Load campuses in case of error
+		req.setAttribute("campus_list", campus_list);
 		List<Trip> trips = TripDAO.getAllAvailableTrips();
-		if(trips.size() > 15){
-			req.setAttribute("trips", trips.subList(0, 15));
-		}else{
+		if(trips.size() > 0){
 			req.setAttribute("trips", trips);
 		}
 		return "trip/trips";
 	}
 	
-	@RequestMapping(value = "/auth/trips/{page_id}", method = RequestMethod.GET)
-	public String tripAtPage(HttpServletRequest req, @PathVariable(value="page_id") final String id) {		//Show the form
+	@RequestMapping(value = "auth/trips", method = RequestMethod.POST)
+	public String tripId(HttpServletRequest req) {		//Show the form
+		List<Campus> campus_list = CampusDAO.getAllCampus();		//Load campuses in case of error
+		req.setAttribute("campus_list", campus_list);
+		
+		String campus_id = req.getParameter("campus_id");
+		if(campus_id != null){
+			int campus_nb = Integer.parseInt(campus_id);
+			if(campus_nb != -1){
+				List<Trip> trips = TripDAO.getTripsByCampusId(campus_nb);
+				if(trips.size() > 0){
+					req.setAttribute("trips", trips);
+				}
+				return "trip/trips";
+			}else{
+				String desc = req.getParameter("desc");
+				if(desc != null){
+					
+				}
+			}
+		}
 		return "trip/trips";
 	}
 	
