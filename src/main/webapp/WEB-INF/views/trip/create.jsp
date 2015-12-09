@@ -11,7 +11,7 @@
 		<link href="<c:url value="/resources/js/library/jquery-ui/jquery-ui.theme.min.css"/>" rel="stylesheet">
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">		
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		
+		<%@ include file="/WEB-INF/views/include/favicon.jsp" %>
 	</head>
 	
 	<body>

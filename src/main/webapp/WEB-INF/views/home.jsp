@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>${sessionScope.user.firstname} ${sessionScope.user.lastname}</title>
-		<link rel="icon" href="http://www.campus-booster.net/actorpictures/${sessionScope.user.booster_id}.jpg" type="image/x-icon">
+		<%@ include file="/WEB-INF/views/include/favicon.jsp" %>
 		<!-- CSS -->
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
