@@ -22,7 +22,7 @@
         <li><a href="${pageContext.request.contextPath}/logout">The home of SUPINFO own trip website</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="${pageContext.request.contextPath}/auth/home"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
         </ul>
     </div>
@@ -48,6 +48,7 @@
 		<fieldset>
   			<form method="POST" action="${pageContext.request.contextPath}/loginRequest">
 	        <p>ID Booster :</p>
+	        
 	        <input type="text" name="id">
 	        <br></br>
 	        <p>Password :</p>
@@ -60,6 +61,11 @@
 			<p style="color:red">${message}</p>
 		</c:if>
 		</fieldset>
+		<br></br>
+		<p>SupTrip is Supinfo own trip service ! 
+	           You can travel all around the country between its
+	           campuses. Sign up and come enjoy the best travel 
+	           service worldwide ! </p>
 		</div>
 		</div>
 		

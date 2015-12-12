@@ -9,10 +9,10 @@
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<%@ include file="/WEB-INF/views/include/favicon.jsp" %>
-		<title>See Trips</title>
+		<title>Bag</title>
 	</head>
 
-<title>See Trips</title>
+<title>Bag</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
         <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
         <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
-        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class=" glyphicon glyphicon-log-out"></span> Basket(${fn:length(sessionScope.booking)})</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class="glyphicon glyphicon-shopping-cart"></span> Bag (${fn:length(sessionScope.booking)})</a></li> 
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -43,24 +43,29 @@
   </div>
 
 </nav>
-<div class="formu">		
-		<h1>Trips in basket:</h1>
+
+	<div class="bag">			
+		<h1>Trips in bag :</h1>
+		
 		<c:forEach items="${booking}" var="book" varStatus="loop">
 			<div>
 				<!-- Afficher les booking en cours sous forme de tableaux -->
-				<p>${ book.trip_booked.description }</p>
+				<h3>* ${ book.trip_booked.description } *</h3>
 			</div>
-			<a href="${pageContext.request.contextPath}/auth/book/confirm/${loop.index}">Confirm</a>
-			<a href="${pageContext.request.contextPath}/auth/book/delete/${loop.index}">Delete</a>
+			
+			<a href="${pageContext.request.contextPath}/auth/book/confirm/${loop.index}" class="btn btn-success">Confirm   </a>
+			<a href="${pageContext.request.contextPath}/auth/book/delete/${loop.index} " class="btn btn-danger ">Delete</a>
 		</c:forEach>
 		
-		<h1>Trips already booked:</h1>
+		<br></br>
+		<h1>Trips already booked :</h1>
+		
 		<c:forEach items="${booked_trips}" var="trip">
 			<div>
-				<p>${ trip.trip_booked.description }</p>
+				<h3>* ${ trip.trip_booked.description } *</h3>
 			</div>
 		</c:forEach>
-		
-		</div>
+	</div>	
+
 	</body>
 </html>

@@ -28,7 +28,7 @@
         <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
         <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
         <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
-        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class=" glyphicon glyphicon-log-out"></span> Basket(${fn:length(sessionScope.booking)})</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class="glyphicon glyphicon-shopping-cart"></span> Bag (${fn:length(sessionScope.booking)})</a></li> 
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -65,7 +65,7 @@
 			<c:forEach items="${trips}" var="trip">
 				<div>
 					<ol class="trips">
-						<li>
+						<li style="margin-left: 1px; margin-top: 50px;">
 							<ul>
 								<li>
 									<h4>${ trip.description }</h4>
@@ -83,7 +83,7 @@
 									<h5>${ trip.remaining_time }</h5>
 								</li>
 								<li>
-									<a href="${pageContext.request.contextPath}/auth/book/${ trip.id }">Add to basket</a>
+									<a href="${pageContext.request.contextPath}/auth/book/${ trip.id }">Add to bag</a>
 								</li>
 							</ul>  
 						</li>
