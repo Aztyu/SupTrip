@@ -43,25 +43,10 @@
 
 </nav>
 <div class="formu">		
-		<h1>Here are the trips by campus name:</h1>
-		<br></br>
-		<p>Select the campus:</p>
-		<form method="POST" action="${pageContext.request.contextPath}/auth/trips">
-			<select name="campus_id"> 
-				<option value="-1">-- Every campus --</option>
-				<c:forEach var="campus" items="${campus_list}">
-						<option value="${campus.id}"
-							<c:if test="${campus.id eq campus_id}">
-								selected
-							</c:if>
-						>${campus.name}</option>
-				</c:forEach>
-			</select>
-			<input type="submit" value="Search" />
-   		</form>
-			
-		<c:if test="${ not empty trips }">
-			<c:forEach items="${trips}" var="trip">
+		<h1>Trips in basket:</h1>
+		
+		<h1>Trips already booked:</h1>
+		<c:forEach items="${trips}" var="trip">
 				<div>
 					<ol class="trips">
 						<li>
@@ -86,10 +71,7 @@
 					</ol>
 				</div>
 			</c:forEach>
-		</c:if>
-		<c:if test="${ empty trips }">
-			<p>${ message }</p>
-		</c:if>
+		
 		
 		</div>
 	</body>
