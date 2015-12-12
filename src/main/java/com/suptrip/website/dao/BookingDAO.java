@@ -17,4 +17,13 @@ public class BookingDAO {
         Query query = em.createQuery("SELECT b FROM Booking b WHERE b.user.booster_id ='"+id+"'");
         return (List<Booking>)query.getResultList();
 	}
+	
+	public static void addBooking(Booking booking){
+		EntityManager em = PersistanceManager.getEntityManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		em.persist(booking);
+		et.commit();
+		em.close();
+	}
 }

@@ -49,5 +49,27 @@ public class BasketController {
 		}
 		return "redirect:/auth/trips";
 	}
+	
+	@RequestMapping(value = "auth/book/confirm/{id}", method = RequestMethod.GET)
+	public String tripAddToDb(HttpServletRequest req, @PathVariable(value="id") final int id) {		//Show the form
+		HttpSession session = req.getSession();
+		List<Booking> ses_booking = (List<Booking>) session.getAttribute("booking"); 
+		
+		Booking b = ses_booking.get(id);
+		BookingDAO.addBooking(b);
+		ses_booking.remove(id);
+		
+		return "redirect:/auth/basket";
+	}
+	
+	@RequestMapping(value = "auth/book/delete/{id}", method = RequestMethod.GET)
+	public String tripRemove(HttpServletRequest req, @PathVariable(value="id") final int id) {		//Show the form
+		HttpSession session = req.getSession();
+		List<Booking> ses_booking = (List<Booking>) session.getAttribute("booking"); 
+		
+		Booking b = ses_booking.remove(id);
+		
+		return "redirect:/auth/basket";
+	}
 
 }

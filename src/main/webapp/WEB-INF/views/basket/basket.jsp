@@ -44,18 +44,19 @@
 </nav>
 <div class="formu">		
 		<h1>Trips in basket:</h1>
-		<c:forEach items="${booking}" var="book">
+		<c:forEach items="${booking}" var="book" varStatus="loop">
 			<div>
 				<!-- Afficher les booking en cours sous forme de tableaux -->
 				<p>${ book.trip_booked.description }</p>
 			</div>
-			<a href="${pageContext.request.contextPath}/auth/trips/"+trip.id>Add to basket</a>
+			<a href="${pageContext.request.contextPath}/auth/book/confirm/${loop.index}">Confirm</a>
+			<a href="${pageContext.request.contextPath}/auth/book/delete/${loop.index}">Delete</a>
 		</c:forEach>
 		
 		<h1>Trips already booked:</h1>
-		<c:forEach items="${trips}" var="trip">
+		<c:forEach items="${booked_trips}" var="trip">
 			<div>
-				<p>${ book.trip_booked.description }</p>
+				<p>${ trip.trip_booked.description }</p>
 			</div>
 		</c:forEach>
 		
