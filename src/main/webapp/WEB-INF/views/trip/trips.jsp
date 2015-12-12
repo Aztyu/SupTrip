@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -27,7 +28,7 @@
         <li><a href="${pageContext.request.contextPath}/auth/trips"><span class="glyphicon glyphicon-plane"></span> See trips</a></li> 
         <li><a href="${pageContext.request.contextPath}/auth/create/trip"><span class="glyphicon glyphicon-globe"></span> Create a new trip</a></li>
         <li><a href="${pageContext.request.contextPath}/auth/campus"><span class="glyphicon glyphicon-education"></span> Create new campus</a></li>
-        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class=" glyphicon glyphicon-log-out"></span> Basket</a></li> 
+        <li><a href="${pageContext.request.contextPath}/auth/basket"><span class=" glyphicon glyphicon-log-out"></span> Basket(${fn:length(sessionScope.booking)})</a></li> 
         <li><a href="${pageContext.request.contextPath}/logout"><span class=" glyphicon glyphicon-log-out"></span> Logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -81,10 +82,14 @@
 									<h5><b>REMAINING TIME :</b></h5>
 									<h5>${ trip.remaining_time }</h5>
 								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/auth/book/${ trip.id }">Add to basket</a>
+								</li>
 							</ul>  
 						</li>
 					</ol>
 				</div>
+				
 			</c:forEach>
 		</c:if>
 		<c:if test="${ empty trips }">

@@ -1,12 +1,14 @@
 package com.suptrip.website.controller.website;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.suptrip.website.dao.CampusDAO;
 import com.suptrip.website.dao.TripDAO;
+import com.suptrip.website.entity.Booking;
 import com.suptrip.website.entity.Campus;
 import com.suptrip.website.entity.Trip;
+import com.suptrip.website.entity.User;
 
 @Controller
 public class TripController {
@@ -64,6 +68,7 @@ public class TripController {
 		}
 		return "trip/trips";
 	}
+	
 	
 	@RequestMapping(value = "/auth/create/trip", method = RequestMethod.GET)
 	public String tripCreate(HttpServletRequest req) {		//Show the form

@@ -44,34 +44,20 @@
 </nav>
 <div class="formu">		
 		<h1>Trips in basket:</h1>
+		<c:forEach items="${booking}" var="book">
+			<div>
+				<!-- Afficher les booking en cours sous forme de tableaux -->
+				<p>${ book.trip_booked.description }</p>
+			</div>
+			<a href="${pageContext.request.contextPath}/auth/trips/"+trip.id>Add to basket</a>
+		</c:forEach>
 		
 		<h1>Trips already booked:</h1>
 		<c:forEach items="${trips}" var="trip">
-				<div>
-					<ol class="trips">
-						<li>
-							<ul>
-								<li>
-									<h4>${ trip.description }</h4>
-								</li>
-								<li>
-									<h5><b>FROM :</b></h5>
-									<h5>${ trip.start.name }</h5>
-								</li>
-								<li>
-									<h5><b>TO :</b></h5>
-									<h5>${ trip.destination.name }</h5>
-								</li>
-								<li>
-									<h5><b>REMAINING TIME :</b></h5>
-									<h5>${ trip.remaining_time }</h5>
-								</li>
-							</ul>  
-						</li>
-					</ol>
-				</div>
-			</c:forEach>
-		
+			<div>
+				<p>${ book.trip_booked.description }</p>
+			</div>
+		</c:forEach>
 		
 		</div>
 	</body>
