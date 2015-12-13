@@ -155,7 +155,7 @@ h5
 }
 .modify{
 	
-	margin-top : -210px;
+	margin-top : -245px;
     margin-left: 700px; 
 }
 .modify p {
@@ -193,3 +193,6 @@ input [type="submit"]{
 	color : #4298D0;
 }
 
+.info p{
+	color : #000000;
+}
