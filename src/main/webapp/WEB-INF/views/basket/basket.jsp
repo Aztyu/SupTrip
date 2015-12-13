@@ -7,8 +7,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
+		
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<%@ include file="/WEB-INF/views/include/favicon.jsp" %>
+		<link href="<c:url value="/resources/css/basket.css"/>" rel="stylesheet">
 		<title>Bag</title>
 	</head>
 
@@ -46,25 +48,49 @@
 
 	<div class="bag">			
 		<h1>Trips in bag :</h1>
+		<table style="width:100%">
+		  <tr>
+		    <th>Description</th>
+		    <th>Departure</th>		
+		    <th>Start campus</th>
+		    <th>Destination campus</th>
+		    <th>Action</th>
+		  </tr>
+		  
 		
-		<c:forEach items="${booking}" var="book" varStatus="loop">
-			<div>
-				<!-- Afficher les booking en cours sous forme de tableaux -->
-				<h3>* ${ book.trip_booked.description } *</h3>
-			</div>
-			
-			<a href="${pageContext.request.contextPath}/auth/book/confirm/${loop.index}" class="btn btn-success">Confirm   </a>
-			<a href="${pageContext.request.contextPath}/auth/book/delete/${loop.index} " class="btn btn-danger ">Delete</a>
-		</c:forEach>
+			<c:forEach items="${booking}" var="book" varStatus="loop">
+				<tr>
+				    <td>${ book.trip_booked.description }</td>
+				    <td>${ book.trip_booked.getDepartureDate() }</td>		
+				    <td>${ book.trip_booked.start.name }</td>
+				    <td>${ book.trip_booked.destination.name }</td>		
+				    <td>
+				    	<a href="${pageContext.request.contextPath}/auth/book/confirm/${loop.index}" class="btn btn-success">Confirm</a>
+						<a href="${pageContext.request.contextPath}/auth/book/delete/${loop.index} " class="btn btn-danger ">Delete</a>
+					</td>
+				</tr>	
+			</c:forEach>
+		</table>
 		
 		<br></br>
 		<h1>Trips already booked :</h1>
 		
+		<table style="width:100%">
+		  <tr>
+		    <th>Description</th>
+		    <th>Departure</th>		
+		    <th>Start campus</th>
+		    <th>Destination campus</th>
+		  </tr>
 		<c:forEach items="${booked_trips}" var="trip">
-			<div>
-				<h3>* ${ trip.trip_booked.description } *</h3>
-			</div>
+			<tr>
+			    <td>${ trip.trip_booked.description }</td>
+			    <td>${ trip.trip_booked.getDepartureDate() }</td>		
+			    <td>${ trip.trip_booked.start.name }</td>
+			    <td>${ trip.trip_booked.destination.name }</td>		
+			</tr>
 		</c:forEach>
+		</table>
 	</div>	
 
 	</body>

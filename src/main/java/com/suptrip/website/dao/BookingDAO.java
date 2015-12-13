@@ -14,7 +14,7 @@ import com.suptrip.website.entity.Campus;
 public class BookingDAO {
 	public static List<Booking> getBookingsFromId(int id){
 		EntityManager em = PersistanceManager.getEntityManager();
-        Query query = em.createQuery("SELECT b FROM Booking b WHERE b.user.booster_id ='"+id+"'");
+        Query query = em.createQuery("SELECT b FROM Booking b WHERE b.user.booster_id ='"+id+"'  ORDER BY b.trip_booked.tripDate ASC");
         return (List<Booking>)query.getResultList();
 	}
 	

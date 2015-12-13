@@ -1,5 +1,6 @@
 package com.suptrip.website.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -103,6 +104,10 @@ public class Trip {
 		    .appendSuffix(" minute", " minutes")
 		    .toFormatter();
 		return pf.print(remaining_time);
+	}
+	
+	public String getDepartureDate(){
+		return new SimpleDateFormat("MM/dd/yyyy HH-mm").format(tripDate);
 	}
 
 	public void updateDuration(){
