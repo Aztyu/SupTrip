@@ -50,15 +50,15 @@
 	<br></br>
 	<h2>List of all trips :</h2>	
 	<p>Returns a list of all the trips</p>
-	<a href="${pageContext.request.contextPath}/api/trips" class="btn btn-primary">All trips</a>
+	<a href="${pageContext.request.contextPath}/api/trips" class="btn btn-primary">api/trips</a>
 	
 	<h2>List of all campuses :</h2>
 	<p>Returns a list of all the existing campuses</p>
-	<a href="${pageContext.request.contextPath}/api/campuses" class="btn btn-primary">All campuses</a>
+	<a href="${pageContext.request.contextPath}/api/campuses" class="btn btn-primary">api/campuses</a>
 	
 	<h2>List trip by campus :</h2>
 	<p>Returns a list of all the trips from or to a campus, pass the campus id in the url</p>
-	<a href="${pageContext.request.contextPath}/api/trips/1" class="btn btn-primary">All trips by existing campuses</a>
+	<a href="${pageContext.request.contextPath}/api/trips/1" class="btn btn-primary">api/trips/{campus_id}</a>
 	</div>
 </body>
 </html>
